@@ -1,53 +1,36 @@
-def bubble_sort(arr):
+def buscar_valor(matriz, valor):
     """
-    Ordena un arreglo en orden ascendente utilizando Bubble Sort.
-    
-    Args:
-        arr (list): Arreglo a ordenar.
-    
-    Returns:
-        list: Arreglo ordenado.
-    """
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
-
-def ordenar_fila_matriz(matriz, fila):
-    """
-    Ordena una fila específica de una matriz.
+    Busca un valor específico en una matriz bidimensional.
     
     Args:
         matriz (list): Matriz bidimensional.
-        fila (int): Índice de la fila a ordenar.
+        valor (int): Valor a buscar.
     
     Returns:
-        list: Matriz con la fila ordenada.
+        tuple or None: Posición del valor si se encuentra, None si no.
     """
-    matriz[fila] = bubble_sort(matriz[fila])
-    return matriz
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] == valor:
+                return (i, j)
+    return None
 
 # Definir una matriz de ejemplo
 matriz = [
-    [5, 2, 8],
-    [4, 9, 1],
-    [7, 3, 6]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
 
-# Mostrar la matriz original
-print("Matriz Original:")
-for fila in matriz:
-    print(fila)
+# Valor a buscar
+valor_a_buscar = 5
 
-# Ordenar una fila específica (por ejemplo, la fila 1)
-fila_a_ordenar = 1
-matriz_ordenada = ordenar_fila_matriz(matriz, fila_a_ordenar)
+# Realizar la búsqueda
+resultado = buscar_valor(matriz, valor_a_buscar)
 
-# Mostrar la matriz con la fila ordenada
-print("\nMatriz con la fila {} ordenada:".format(fila_a_ordenar + 1))
-for fila in matriz_ordenada:
-    print(fila)
+if resultado is not None:
+    print(f"El valor {valor_a_buscar} se encontró en la posición ({resultado[0]}, {resultado[1]})")
+else:
+    print(f"El valor {valor_a_buscar} no se encontró en la matriz")
 
 
