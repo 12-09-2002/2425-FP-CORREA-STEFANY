@@ -1,1 +1,35 @@
+def buscar_valor(matriz, valor):
+    """
+    Busca un valor específico en una matriz bidimensional.
+    
+    Args:
+        matriz (list): Matriz bidimensional.
+        valor (int): Valor a buscar.
+    
+    Returns:
+        tuple or None: Posición del valor si se encuentra, None si no.
+    """
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] == valor:
+                return (i, j)
+    return None
+
+# Definir una matriz de ejemplo
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Valor a buscar
+valor_a_buscar = 5
+
+# Realizar la búsqueda
+resultado = buscar_valor(matriz, valor_a_buscar)
+
+if resultado is not None:
+    print(f"El valor {valor_a_buscar} se encontró en la posición ({resultado[0]}, {resultado[1]})")
+else:
+    print(f"El valor {valor_a_buscar} no se encontró en la matriz")
 
