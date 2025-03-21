@@ -1,0 +1,48 @@
+def calcular_descuento(monto_total, porcentaje_descuento=10):
+    """
+    Calcula el descuento aplicando el porcentaje al monto total de la compra.
+
+    Parámetros:
+    - monto_total (float): Monto total de la compra.
+    - porcentaje_descuento (int, opcional): Porcentaje de descuento. Por defecto es 10%.
+
+    Retorna:
+    - float: Monto del descuento calculado.
+    """
+    descuento = (porcentaje_descuento / 100) * monto_total
+    return descuento
+
+def calcular_monto_final(monto_total, descuento):
+    """
+    Calcula el monto final a pagar después del descuento.
+
+    Parámetros:
+    - monto_total (float): Monto total de la compra.
+    - descuento (float): Monto del descuento.
+
+    Retorna:
+    - float: Monto final a pagar.
+    """
+    monto_final = monto_total - descuento
+    return monto_final
+
+# Programa Principal
+if __name__ == "__main__":
+    # Llamada 1: Con porcentaje de descuento por defecto (10%)
+    monto_compra1 = 100.0
+    descuento1 = calcular_descuento(monto_compra1)
+    monto_final1 = calcular_monto_final(monto_compra1, descuento1)
+    
+    print(f"Monto de compra: ${monto_compra1:.2f}")
+    print(f"Descuento (10%): ${descuento1:.2f}")
+    print(f"Monto final a pagar: ${monto_final1:.2f}\n")
+
+    # Llamada 2: Con porcentaje de descuento personalizado (20%)
+    monto_compra2 = 200.0
+    porcentaje_descuento2 = 20
+    descuento2 = calcular_descuento(monto_compra2, porcentaje_descuento2)
+    monto_final2 = calcular_monto_final(monto_compra2, descuento2)
+    
+    print(f"Monto de compra: ${monto_compra2:.2f}")
+    print(f"Descuento ({porcentaje_descuento2}%): ${descuento2:.2f}")
+    print(f"Monto final a pagar: ${monto_final2:.2f}")
