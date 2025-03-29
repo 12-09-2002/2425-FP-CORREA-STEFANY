@@ -27,3 +27,17 @@ print("Clave 'edad' eliminada.")
 # Imprimir el diccionario final
 print("\nDiccionario final:")
 print(informacion_personal)
+
+
+
+
+
+Valor original de la ciudad: Quito
+Valor modificado de la ciudad: Guayaquil
+Nueva especialidad: Desarrollo Web
+Teléfono: 0987654321
+Clave 'edad' eliminada.
+
+Diccionario final:
+{'nombre': 'Juan Pérez', 'ciudad': 'Guayaquil', 'profesion': 'Ingeniero de Software', 'especialidad': 'Desarrollo Web', 'telefono': '0987654321'}
+
