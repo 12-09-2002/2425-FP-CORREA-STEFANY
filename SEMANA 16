@@ -1,0 +1,60 @@
+# Abrir el archivo en modo escritura ('w') para crear o sobreescribir el contenido
+def escribir_notas():
+    archivo = open('my_notes.txt', 'w')  # Abrir archivo en modo escritura
+    
+    # Escribir notas en el archivo
+    notas = [
+        "Nota 1: Recordar comprar frutas para el fin de semana.\n",
+        "Nota 2: Revisar el correo electrónico para nuevos mensajes.\n",
+        "Nota 3: Preparar la presentación para la reunión de mañana.\n"
+    ]
+    
+    for nota in notas:
+        archivo.write(nota)  # Escribir cada nota en el archivo
+    
+    archivo.close()  # Cerrar el archivo después de escribir
+
+# Abrir el archivo en modo lectura ('r') para leer su contenido
+def leer_notas():
+    archivo = open('my_notes.txt', 'r')  # Abrir archivo en modo lectura
+    
+    # Leer y mostrar el contenido línea por línea
+    linea = archivo.readline()
+    while linea:
+        print(linea, end='')  # Mostrar cada línea sin el salto de línea extra
+        linea = archivo.readline()
+    
+    archivo.close()  # Cerrar el archivo después de leer
+
+# Llamar a las funciones para escribir y leer notas
+escribir_notas()
+leer_notas()
+
+
+
+
+
+
+# Abrir el archivo en modo escritura ('w') para crear o sobreescribir el contenido
+def escribir_notas():
+    with open('my_notes.txt', 'w') as archivo:  # Abrir archivo en modo escritura
+        # Escribir notas en el archivo
+        notas = [
+            "Nota 1: Recordar comprar frutas para el fin de semana.\n",
+            "Nota 2: Revisar el correo electrónico para nuevos mensajes.\n",
+            "Nota 3: Preparar la presentación para la reunión de mañana.\n"
+        ]
+        
+        for nota in notas:
+            archivo.write(nota)  # Escribir cada nota en el archivo
+
+# Abrir el archivo en modo lectura ('r') para leer su contenido
+def leer_notas():
+    with open('my_notes.txt', 'r') as archivo:  # Abrir archivo en modo lectura
+        # Leer y mostrar el contenido línea por línea
+        for linea in archivo:
+            print(linea, end='')  # Mostrar cada línea sin el salto de línea extra
+
+# Llamar a las funciones para escribir y leer notas
+escribir_notas()
+leer_notas()
